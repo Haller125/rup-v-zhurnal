@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Политика конфиденциальности · РУП в журнал</title>
+  <meta name="description" content="Какие данные обрабатывает расширение Chrome «РУП в журнал: помощник для SmartNation» и где они хранятся.">
+  <!-- Источник текста: docs/privacy-policy.md в репозитории расширения. Страница без внешних шрифтов, скриптов и счётчиков. -->
+  <style>
+    :root {
+      --bg: #f6f8fc; --surface: #ffffff; --text: #1f2937; --muted: #5b6475; --line: #dde3ee;
+      --accent: #2b4fc7; --accent-soft: #e8eefc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0f1420; --surface: #161d2c; --text: #e5e9f2; --muted: #9aa4b8; --line: #2a3346; --accent: #8aa6ff; --accent-soft: #1d2740; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    main { max-width: 800px; margin: 0 auto; padding: 40px 16px 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--accent); font-weight: 600; font-size: 15px; text-decoration: none; }
+    .brand img { width: 32px; height: 32px; }
+    h1 { font-size: clamp(26px, 5vw, 34px); line-height: 1.2; margin: 24px 0 8px; }
+    h2 { font-size: 20px; margin: 36px 0 10px; }
+    .meta { color: var(--muted); margin: 0 0 24px; font-size: 14px; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 4px 24px 20px; }
+    .summary { background: var(--accent-soft); border-radius: 10px; padding: 14px 18px; margin: 20px 0 4px; }
+    .summary p { margin: 0; }
+    .table { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 560px; }
+    th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+    th { color: var(--muted); font-weight: 600; }
+    code { font: 13px/1.4 ui-monospace, Consolas, monospace; background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+    a { color: var(--accent); }
+    ul { padding-left: 22px; }
+    li { margin: 4px 0; }
+    hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0 0; }
+    footer { color: var(--muted); font-size: 13px; margin-top: 24px; }
+    @media (max-width: 480px) { .card { padding: 4px 16px 16px; } .summary { padding: 12px 14px; } }
+  </style>
+</head>
+<body>
+<main>
+  <a class="brand" href="./"><img src="icon128.png" alt="">РУП в журнал</a>
+  <h1>Политика конфиденциальности</h1>
+  <p class="meta">Редакция от 28.10.2026 · версия расширения 0.3.0</p>
+
+  <div class="card">
+    <div class="summary">
+      <p><b>Коротко:</b> расширение работает только в браузере пользователя. У него нет своего сервера, аналитики и рекламы.
+        Разработчику и третьим лицам данные не передаются. Запросы уходят только на сайт журнала SmartNation College
+        и только по команде пользователя.</p>
+    </div>
+
+    <p>Расширение «РУП в журнал: помощник для SmartNation» (далее «расширение») помогает преподавателю перенести темы
+      из рабочей учебной программы (РУП) в колонки электронного журнала SmartNation College.
+      Разработчик: Кабаш Е., связь: <a href="mailto:erokkabash1@gmail.com">erokkabash1@gmail.com</a>.</p>
+    <p>Расширение не является продуктом SmartNation и не связано с ТОО «Bilim Technology».</p>
+
+    <h2>1. Какие данные обрабатывает расширение</h2>
+    <div class="table">
+      <table>
+        <thead><tr><th>Данные</th><th>Откуда</th><th>Зачем</th></tr></thead>
+        <tbody>
+          <tr><td>Файл РУП (.docx или .json), который выбрал пользователь</td><td>компьютер пользователя</td><td>найти разделы РО и темы занятий</td></tr>
+          <tr><td>Расписание группы: даты семестра, дни недели, пары, названия дисциплин, ФИО преподавателей, аудитории</td><td>вводит или загружает пользователь</td><td>рассчитать даты занятий</td></tr>
+          <tr><td>Сведения о журнале: группа, результат обучения, отведённые часы, ФИО преподавателя, список существующих колонок с датами и темами</td><td>страница журнала SmartNation, открытая пользователем</td><td>показать журнал в панели и не создать повторно уже существующие колонки</td></tr>
+          <tr><td>Служебный токен защиты от подделки запросов (CSRF), который SmartNation размещает на странице</td><td>страница журнала</td><td>подтвердить запрос на создание колонки от имени вошедшего пользователя</td></tr>
+          <tr><td>Время сервера из заголовка Date ответов SmartNation</td><td>ответы SmartNation</td><td>в пилотной версии проверить, не закончился ли срок пилота</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Ответ SmartNation со списком колонок содержит также оценки и отметки студентов, привязанные к внутренним номерам.
+      Расширение их не использует, не сохраняет и никуда не передаёт. Списки студентов расширение не запрашивает.</p>
+
+    <h2>2. Где хранятся данные</h2>
+    <ul>
+      <li>Сохранённые расписания хранятся только в браузере пользователя, в локальном хранилище расширения
+        (<code>chrome.storage.local</code>). Они удаляются кнопкой «Удалить» в панели или вместе с расширением.</li>
+      <li>Содержимое РУП и данные журнала хранятся только в памяти открытой вкладки и пропадают при её закрытии.</li>
+      <li>По команде пользователя расширение сохраняет на его компьютер файлы: расписание и план колонок в формате JSON.</li>
+    </ul>
+
+    <h2>3. Кому передаются данные</h2>
+    <ul>
+      <li>Разработчику расширения и третьим лицам данные <b>не передаются</b>. У расширения нет своего сервера,
+        аналитики, рекламы и счётчиков.</li>
+      <li>Расширение отправляет запросы только на сайт <code>college.smartnation.kz</code> и только по команде пользователя:
+        чтение сведений о журнале и создание колонок с датой, темой и количеством часов. Это те же запросы, что выполняет
+        сам интерфейс журнала, они идут от имени пользователя, который уже вошёл в SmartNation.</li>
+      <li>Расширение не загружает и не исполняет код с внешних адресов.</li>
+      <li>Расширение не продаёт данные и не использует их для рекламы, оценки кредитоспособности или любых целей,
+        не связанных с заполнением журнала.</li>
+    </ul>
+
+    <h2>4. Права расширения в браузере</h2>
+    <ul>
+      <li><b>Доступ к страницам <code>https://college.smartnation.kz/*/mng/control/journals/*</code></b>: чтобы показать
+        панель на странице журнала и выполнять запросы к журналу от имени пользователя.</li>
+      <li><b>storage</b>: чтобы хранить расписания пользователя в его браузере.</li>
+    </ul>
+
+    <h2>5. Персональные данные</h2>
+    <p>Расширение предназначено для преподавателей. ФИО преподавателей из расписания и журнала обрабатываются только
+      на устройстве пользователя. Разработчик не получает и не хранит персональные данные пользователей.</p>
+
+    <h2>6. Изменения политики</h2>
+    <p>Если в будущих версиях появятся учётные записи, лицензии или обработка РУП на сервере разработчика, политика будет
+      обновлена до выпуска такой версии, а в описании расширения будет указано, какие данные и зачем передаются.</p>
+
+    <h2>7. Контакты</h2>
+    <p>Вопросы о данных и просьбы: <a href="mailto:erokkabash1@gmail.com">erokkabash1@gmail.com</a>.</p>
+  </div>
+
+  <section lang="en">
+    <h2>English summary</h2>
+    <div class="card">
+      <p>The Chrome extension “РУП в журнал” (RUP to Journal) helps a teacher create lesson columns (date, topic, hours)
+        in the SmartNation College e-journal from their curriculum document. It runs entirely in the user's browser.</p>
+      <ul>
+        <li>It reads the curriculum file the user selects, the class timetable the user enters, and the journal page
+          the user has open. It never requests student lists; student marks returned by the journal are not used or stored.</li>
+        <li>Timetables are stored only in <code>chrome.storage.local</code> on the user's device. Everything else lives
+          in the open tab's memory.</li>
+        <li>Requests go only to <code>college.smartnation.kz</code>, only when the user clicks, using the user's existing
+          session. No data is sent to the developer or any third party. No analytics, ads or remote code.</li>
+        <li>Contact: Kabash E., <a href="mailto:erokkabash1@gmail.com">erokkabash1@gmail.com</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr>
+  <footer>«РУП в журнал» · независимое расширение, не является продуктом SmartNation.</footer>
+</main>
+</body>
+</html>
