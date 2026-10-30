@@ -42,7 +42,7 @@
 <main>
   <a class="brand" href="./"><img src="icon128.png" alt="">РУП в журнал</a>
   <h1>Политика конфиденциальности</h1>
-  <p class="meta">Редакция от 28.10.2026 · версия расширения 0.3.0</p>
+  <p class="meta">Редакция от 30.10.2026 · версия расширения 0.4.0</p>
 
   <div class="card">
     <div class="summary">
@@ -62,7 +62,7 @@
         <thead><tr><th>Данные</th><th>Откуда</th><th>Зачем</th></tr></thead>
         <tbody>
           <tr><td>Файл РУП (.docx или .json), который выбрал пользователь</td><td>компьютер пользователя</td><td>найти разделы РО и темы занятий</td></tr>
-          <tr><td>Расписание группы: даты семестра, дни недели, пары, названия дисциплин, ФИО преподавателей, аудитории</td><td>вводит или загружает пользователь</td><td>рассчитать даты занятий</td></tr>
+          <tr><td>Расписание группы: даты семестра, дни недели, пары, названия дисциплин, ФИО преподавателей, аудитории</td><td>вводит или загружает пользователь; расписания групп Политеха из открытого расписания колледжа встроены в расширение</td><td>рассчитать даты занятий</td></tr>
           <tr><td>Сведения о журнале: группа, результат обучения, отведённые часы, ФИО преподавателя, список существующих колонок с датами и темами</td><td>страница журнала SmartNation, открытая пользователем</td><td>показать журнал в панели и не создать повторно уже существующие колонки</td></tr>
           <tr><td>Служебный токен защиты от подделки запросов (CSRF), который SmartNation размещает на странице</td><td>страница журнала</td><td>подтвердить запрос на создание колонки от имени вошедшего пользователя</td></tr>
           <tr><td>Время сервера из заголовка Date ответов SmartNation</td><td>ответы SmartNation</td><td>в пилотной версии проверить, не закончился ли срок пилота</td></tr>
@@ -75,7 +75,8 @@
     <h2>2. Где хранятся данные</h2>
     <ul>
       <li>Сохранённые расписания хранятся только в браузере пользователя, в локальном хранилище расширения
-        (<code>chrome.storage.local</code>). Они удаляются кнопкой «Удалить» в панели или вместе с расширением.</li>
+        (<code>chrome.storage.local</code>). Встроенные расписания копируются туда при первом открытии журнала.
+        Расписания удаляются кнопкой «Удалить» в панели или вместе с расширением.</li>
       <li>Содержимое РУП и данные журнала хранятся только в памяти открытой вкладки и пропадают при её закрытии.</li>
       <li>По команде пользователя расширение сохраняет на его компьютер файлы: расписание и план колонок в формате JSON.</li>
     </ul>
@@ -117,6 +118,7 @@
       <p>The Chrome extension “РУП в журнал” (RUP to Journal) helps a teacher create lesson columns (date, topic, hours)
         in the SmartNation College e-journal from their curriculum document. It runs entirely in the user's browser.</p>
       <ul>
+        <li>It ships the public class timetables of the Polytechnic college and copies them to local storage on first use.</li>
         <li>It reads the curriculum file the user selects, the class timetable the user enters, and the journal page
           the user has open. It never requests student lists; student marks returned by the journal are not used or stored.</li>
         <li>Timetables are stored only in <code>chrome.storage.local</code> on the user's device. Everything else lives
